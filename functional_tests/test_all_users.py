@@ -2,7 +2,7 @@
 from selenium import webdriver
 
 from django.core.urlresolvers import reverse
-from django.core.contrib.staticfiles.testing import StaticLiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
 
 class HomeNewVisitorTest(StaticLiveServerTestCase):
@@ -10,7 +10,6 @@ class HomeNewVisitorTest(StaticLiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(3)
-        self.browser.wait = WebDriverWait(self.browser, 10)
 
     def tearDown(self):
         self.browser.quit()
