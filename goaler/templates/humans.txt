@@ -4,12 +4,16 @@
 # TEAM
 
     <name> -- <role> -- <twitter>
+    Jamal Moir -- Developer -- @jamalmoir
 
 # THANKS
 
-    <name>
+    Everyone
 
 # TECHNOLOGY COLOPHON
 
+    Django
+    Twitter Bootstrap
+    HTML5 Boilerplate
     HTML5, CSS3
     jQuery, Modernizr
