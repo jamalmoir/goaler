@@ -1,9 +1,15 @@
 # -*- coding: utf-8 -*-
+import datetime
+
 from django.shortcuts import render
+from django.utils.timezone import now
 
 
 def home(request):
-    return render(request, 'goaler/index.html', {})
+    today = datetime.date.today()
+    return render(request, 'goaler/index.html',
+                  {'today': today,
+                   'now': now()})
 
 
 def home_files(request, filename):

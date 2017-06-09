@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 
+{% load i18n %}
+{% load l10n %}
+{% load tz %}
+
 {% block head_title %}Goaler{% endblock %}
 
 {% block content %}
   <div class="jumbotron">
         <div class="container">
-          <h1>Hello, world!</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+          <h1>{% trans "Welcome to Goaler!" %}</h1>
+          <p>{% blocktrans %}Goaler is an app for tracking your goals and competing with your friends"</br></br>Add your goals and track your way to success, with a little bit of healthy competition!{% endblocktrans %}<p>
           <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
         </div>
       </div>
@@ -15,18 +19,18 @@
         <!-- Example row of columns -->
         <div class="row">
           <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <h2 id="local-date">{{ today }}</h2>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
           </div>
           <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <h2 id="non-local-date">{{ today|unlocalize }}</h2>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
          </div>
           <div class="col-md-4">
             <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p> UK: <span id="time-tz">{{ now|time:"H:i" }}</span></p>
+            <p> UTC: <span id="time-utc">{{ now|utc|time:"H:i" }}</span></p>
+            <p> NY: <span id="time-ny">{{ "America/New_York"|time:"H:i" }}</span></p>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
           </div>
         </div>
