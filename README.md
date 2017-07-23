@@ -1,2 +1,2 @@
 # Goaler
-An app for competing with other people for goal completion
+An app for tracking body measurements
