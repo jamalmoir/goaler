@@ -29,5 +29,6 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     url(r'^$', home, name='home'),
+    url(r'^tracker/', include('goaler.apps.measurement_tracker.urls', namespace='measurement_tracker')),
     url(r'^admin/', admin.site.urls),
 )

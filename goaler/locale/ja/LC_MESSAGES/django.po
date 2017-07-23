@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 16:14+0000\n"
+"POT-Creation-Date: 2017-07-23 09:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,81 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: goaler/settings/base.py:130
+#: goaler/apps/goaler/models.py:16 goaler/apps/measurement_tracker/models.py:17
+msgid "user"
+msgstr ""
+
+#: goaler/apps/goaler/models.py:22
+msgid "interaction"
+msgstr ""
+
+#: goaler/apps/goaler/models.py:28
+msgid "date of birth"
+msgstr ""
+
+#: goaler/apps/goaler/models.py:35
+msgid "sex"
+msgstr ""
+
+#: goaler/apps/goaler/models.py:50
+msgid "User Profile"
+msgstr ""
+
+#: goaler/apps/goaler/models.py:51
+msgid "User Profiles"
+msgstr ""
+
+#: goaler/apps/measurement_tracker/models.py:23
+msgid "weight"
+msgstr ""
+
+#: goaler/apps/measurement_tracker/models.py:24
+msgid "Enter your body weight"
+msgstr ""
+
+#: goaler/apps/measurement_tracker/models.py:28
+msgid "date"
+msgstr ""
+
+#: goaler/apps/measurement_tracker/models.py:84
+msgid "Measurement"
+msgstr ""
+
+#: goaler/apps/measurement_tracker/models.py:85
+msgid "Measurements"
+msgstr ""
+
+#: goaler/apps/measurement_tracker/templates/measurement_tracker/history.html:11
+msgid "Measurement History"
+msgstr ""
+
+#: goaler/apps/measurement_tracker/templates/measurement_tracker/history.html:13
+msgid ""
+"\n"
+"            <p>This is your measurement history. Here you can see the past "
+"30 measurements that you have recorded and a\n"
+"                graph representing them. This is a great place to take a "
+"look at your progress!</p>\n"
+"            <p>TIP: Click on the line labels above the graph to disable and "
+"enable lines!</p>\n"
+"        "
+msgstr ""
+
+#: goaler/settings/base.py:155
 msgid "English"
 msgstr ""
 
-#: goaler/settings/base.py:131
+#: goaler/settings/base.py:156
 msgid "Japanese"
-msgstr "日本語"
-
-#: goaler/templates/goaler/index.html:10
-msgid "Welcome to Goaler!"
-msgstr "ゴーラへようこそ！"
+msgstr ""
 
 #: goaler/templates/goaler/index.html:11
-msgid ""
-"Goaler is an app for tracking your goals and competing with your friends\"</"
-"br></br>Add your goals and track your way to success, with a little bit of "
-"healthy competition!"
+msgid "Welcome to Goaler!"
+msgstr "Goalerへようこそ！"
+
+#: goaler/templates/goaler/index.html:12
+msgid "Log in to get tracking!"
 msgstr ""
-"ゴーラはゴールを達成するためのアプリです。友達と競争しながらゴールを達成す"
-"る！"
+
+#~ msgid "Welcome to Goaler"
+#~ msgstr "Goalerへようこそ！"

@@ -1,0 +1,14 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+    <h1>Record a Measurement for {{ today }}</h1>
+
+    {% if error_message %}<div class="alert alert-danger"><strong>{{ error_message }}</strong></div>{% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Track</button>
+    </form>
+{% endblock %}
+

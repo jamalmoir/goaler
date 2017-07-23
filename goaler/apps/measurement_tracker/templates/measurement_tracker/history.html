@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+
+{% block head_javascript %}
+    <script src="{% static 'chart.js/dist/Chart.bundle.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>{% trans 'Measurement History' %}</h1>
+    {% if latest_measurements %}
+        {% blocktrans %}
+            <p>This is your measurement history. Here you can see the past 30 measurements that you have recorded and a
+                graph representing them. This is a great place to take a look at your progress!</p>
+            <p>TIP: Click on the line labels above the graph to disable and enable lines!</p>
+        {%  endblocktrans %}
+
+        <canvas id="measurementHistoryChart"></canvas>
+        <script>
+            var data = {{ chart_data|safe }}
+            var options = {{ chart_options|safe }}
+            var ctx = document.getElementById('measurementHistoryChart').getContext('2d');
+            var measurementHistoryChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: options
+            });
+        </script>
+        <table class="table table-striped table-responsive">
+            <tr>
+                <th>Date</th>
+                <th>Weight</th>
+                <th>Neck</th>
+                <th>Chest</th>
+                <th>Arm</th>
+                <th>Waist</th>
+                <th>Hip</th>
+                <th>Thigh</th>
+            </tr>
+            {% for measurement in latest_measurements %}
+                <tr>
+                    <td>{{ measurement.date }}</td>
+                    <td>{{ measurement.weight }}</td>
+                    <td>{{ measurement.neck }}</td>
+                    <td>{{ measurement.chest }}</td>
+                    <td>{{ measurement.arm }}</td>
+                    <td>{{ measurement.waist }}</td>
+                    <td>{{ measurement.hip }}</td>
+                    <td>{{ measurement.thigh }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No measurement history. Click add and get tracking!</p>
+    {% endif %}
+    <a id="track" href="{% url 'measurement_tracker:add' %}" class="btn btn-success">Add New Measurement</a>
+{% endblock %}

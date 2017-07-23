@@ -2,36 +2,14 @@
 
 {% load i18n %}
 {% load l10n %}
-{% load tz %}
 
 {% block head_title %}Goaler{% endblock %}
 
 {% block content %}
-  <div class="jumbotron">
+    <div class="jumbotron">
         <div class="container">
-          <h1>{% trans "Welcome to Goaler!" %}</h1>
-          <p>{% blocktrans %}Goaler is an app for tracking your goals and competing with your friends"</br></br>Add your goals and track your way to success, with a little bit of healthy competition!{% endblocktrans %}<p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+            <h1>{% trans "Welcome to Goaler!" %}</h1>
+            <p>{% blocktrans %}Log in to get tracking!{% endblocktrans %}<p>
         </div>
-      </div>
-
-      <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="col-md-4">
-            <h2 id="local-date">{{ today }}</h2>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2 id="non-local-date">{{ today|unlocalize }}</h2>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-         </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p> UK: <span id="time-tz">{{ now|time:"H:i" }}</span></p>
-            <p> UTC: <span id="time-utc">{{ now|utc|time:"H:i" }}</span></p>
-            <p> NY: <span id="time-ny">{{ "America/New_York"|time:"H:i" }}</span></p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-          </div>
-        </div>
-{% endblock  %}
+    </div>
+{% endblock %}

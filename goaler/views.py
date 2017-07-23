@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
-import datetime
-
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.utils.timezone import now
+from django.urls import reverse
 
 
 def home(request):
-    today = datetime.date.today()
-    return render(request, 'goaler/index.html',
-                  {'today': today,
-                   'now': now()})
+    if request.user.is_authenticated():
+        return HttpResponseRedirect(reverse('measurement_tracker:history'))
+    else:
+        return render(request, 'goaler/index.html')
 
 
 def home_files(request, filename):
